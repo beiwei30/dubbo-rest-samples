@@ -1,6 +1,10 @@
 package org.apache.dubbo.samples.rest.api;
 
-public class User {
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+
+@XmlRootElement
+public class User implements Serializable {
     private Long id;
     private String name;
 
