@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.apache.dubbo</groupId>
-    <artifactId>rest-samples-basic</artifactId>
+    <artifactId>rest-samples-servlet</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
@@ -13,6 +13,8 @@
     <properties>
         <dubbo.version>2.6.5</dubbo.version>
         <maven.compiler.version>3.8.0</maven.compiler.version>
+        <maven.war.version>2.3</maven.war.version>
+        <spring.version>4.3.16.RELEASE</spring.version>
         <source.level>1.8</source.level>
         <target.level>1.8</target.level>
     </properties>
@@ -80,6 +82,30 @@
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-framework</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-jaxrs2</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-jaxrs2-servlet-initializer</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>swagger-ui</artifactId>
+            <version>3.20.3</version>
+        </dependency>
     </dependencies>
 
 
@@ -92,6 +118,15 @@
                 <configuration>
                     <source>${source.level}</source>
                     <target>${target.level}</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>${maven.war.version}</version>
+                <configuration>
+                    <warName>dubbo-rest</warName>
                 </configuration>
             </plugin>
         </plugins>

@@ -1,5 +1,7 @@
 package org.apache.dubbo.samples.rest.api;
 
+import io.swagger.v3.oas.annotations.Parameter;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -8,7 +10,7 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-@Path("user")
+@Path("api/users")
 @Consumes({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
 @Produces({MediaType.APPLICATION_JSON, MediaType.TEXT_XML})
 public interface UserService {
@@ -18,5 +20,5 @@ public interface UserService {
 
     @POST
     @Path("register")
-    Long registerUser(User user);
+    Long registerUser(@Parameter(description = "a user to register") User user);
 }

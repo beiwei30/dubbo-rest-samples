@@ -5,7 +5,38 @@
          version="3.1">
 
     <context-param>
-        <param-name>contextConfiguration</param-name>
-        <param-value>rest-provider.xml</param-value>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/rest-provider.xml</param-value>
     </context-param>
+
+    <listener>
+        <listener-class>com.alibaba.dubbo.remoting.http.servlet.BootstrapListener</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>com.alibaba.dubbo.remoting.http.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>openapi</servlet-name>
+        <servlet-class>io.swagger.v3.jaxrs2.integration.OpenApiServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>openapi</servlet-name>
+        <url-pattern>/openapi.json</url-pattern>
+        <url-pattern>/openapi.yaml</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+
 </web-app>
