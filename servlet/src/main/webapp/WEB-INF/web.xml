@@ -6,7 +6,7 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/rest-provider.xml</param-value>
+        <param-value>/WEB-INF/classes/spring/rest-provider.xml</param-value>
     </context-param>
 
     <listener>
@@ -26,6 +26,10 @@
     <servlet>
         <servlet-name>openapi</servlet-name>
         <servlet-class>io.swagger.v3.jaxrs2.integration.OpenApiServlet</servlet-class>
+        <init-param>
+            <param-name>openApi.configuration.resourcePackages</param-name>
+            <param-value>org.apache.dubbo.samples.rest.api</param-value>
+        </init-param>
     </servlet>
 
     <servlet-mapping>

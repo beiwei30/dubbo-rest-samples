@@ -12,6 +12,8 @@
 
     <properties>
         <dubbo.version>2.6.5</dubbo.version>
+        <swagger.version>2.0.6</swagger.version>
+        <swagger.webjar.version>3.20.3</swagger.webjar.version>
         <maven.compiler.version>3.8.0</maven.compiler.version>
         <maven.war.version>2.3</maven.war.version>
         <spring.version>4.3.16.RELEASE</spring.version>
@@ -92,19 +94,19 @@
         <dependency>
             <groupId>io.swagger.core.v3</groupId>
             <artifactId>swagger-jaxrs2</artifactId>
-            <version>2.0.6</version>
+            <version>${swagger.version}</version>
         </dependency>
 
         <dependency>
             <groupId>io.swagger.core.v3</groupId>
             <artifactId>swagger-jaxrs2-servlet-initializer</artifactId>
-            <version>2.0.6</version>
+            <version>${swagger.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>swagger-ui</artifactId>
-            <version>3.20.3</version>
+            <version>${swagger.webjar.version}</version>
         </dependency>
     </dependencies>
 
