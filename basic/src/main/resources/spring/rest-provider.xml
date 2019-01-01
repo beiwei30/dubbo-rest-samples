@@ -7,7 +7,8 @@
     <dubbo:application name="rest-provider"/>
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
     <dubbo:protocol name="rest" port="8080" server="netty"/>
-    <dubbo:service interface="org.apache.dubbo.samples.rest.api.UserService" ref="userService"/>
+    <dubbo:protocol name="dubbo" server="netty4"/>
+    <dubbo:service interface="org.apache.dubbo.samples.rest.api.UserService" protocol="rest,dubbo" ref="userService"/>
     <bean id="userService" class="org.apache.dubbo.samples.rest.impl.UserServiceImpl"/>
 
 </beans>
