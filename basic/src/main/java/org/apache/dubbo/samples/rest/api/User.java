@@ -3,7 +3,7 @@ package org.apache.dubbo.samples.rest.api;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;
 
-@XmlRootElement
+//@XmlRootElement
 public class User implements Serializable {
     private Long id;
     private String name;

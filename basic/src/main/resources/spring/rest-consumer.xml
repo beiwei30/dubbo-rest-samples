@@ -5,9 +5,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
     <dubbo:application name="rest-consumer"/>
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
-    <dubbo:reference id="userService" interface="org.apache.dubbo.samples.rest.api.UserService" protocol="rest"/>
+    <dubbo:reference id="userService" interface="org.apache.dubbo.samples.rest.api.UserService"/>
 
-    <!-- direct connect -->
-    <!--<dubbo:reference id="userService" interface="org.apache.dubbo.samples.rest.api.UserService" url="rest://localhost:8080/"/>-->
+    <!-- direct connect
+    <dubbo:reference
+            id="userService"
+            interface="org.apache.dubbo.samples.rest.api.UserService"
+            url="rest://localhost:8080/"/>
+    -->
 
 </beans>

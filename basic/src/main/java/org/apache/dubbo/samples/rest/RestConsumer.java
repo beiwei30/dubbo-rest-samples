@@ -11,9 +11,9 @@ public class RestConsumer {
         context.start();
 
         UserService userService = context.getBean("userService", UserService.class);
-        System.out.println(">>> " + userService.getUser(1L));
+        System.out.println(userService.getUser(1L));
 
         User user = new User(2L, "Larry Page");
-        System.out.println(">>> " + userService.registerUser(user));
+        System.out.println(userService.registerUser(user));
     }
 }
